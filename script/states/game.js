@@ -173,15 +173,16 @@ class Game extends State {
         // draw flies
         this.flies.forEach(fly => {
             fly.draw(renderer, fly, this.frame);
-
-            renderer.isolatePath(() => {
-               renderer.fillText(`Score: ${this.player.score}`, 3, 3); 
-            }, {
-                textAlign: 'left',
-                textBaseline: 'top',
-                fillStyle: '#fff',
-                font: '32pt Sans',
-            });
+        });
+        
+        // draw score
+        renderer.isolatePath(() => {
+            renderer.fillText(`Score: ${this.player.score}`, 3, 3); 
+        }, {
+            textAlign: 'left',
+            textBaseline: 'top',
+            fillStyle: '#fff',
+            font: '32pt Sans',
         });
     }
 }
