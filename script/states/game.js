@@ -3,6 +3,7 @@ const { STATES } = require('../stateFactory');
 
 const { SPEED } = require('../constants')
 const Fly = require('../gameObjects/fly');
+const Player = require('../gameObjects/player');
 const RIBBIT_REST = 60 * 5; // 60 fps * number of seconds
 const RIBBIT_FADE = 300;
 const MAX_FLIES = 10;
@@ -17,22 +18,7 @@ class Game extends State {
 
         this.flies = [];
 
-        this.player = {
-            score: 0,
-            x: 800,
-            y: 800,
-            dir: 1,
-            tongue: {
-                length: 0,
-                active: null,
-                frame: 0,
-            },
-            ribbit: {
-                cooldown: 0,
-                x: null,
-                y: null,
-            }
-        };
+        this.player = new Player(800, 800);
     }
 
     // NEXT: Give the frog a tongue that sticks out!
