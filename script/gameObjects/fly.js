@@ -34,8 +34,26 @@ class Fly {
     }
   }
 
-  draw(renderer) {
-
+  draw(renderer, fly, frame) {
+    renderer.isolatePath(() => {
+      renderer.strokeAndFillCircle(fly.x, fly.y, FLY_SIZE);
+      renderer.path(() => {
+        renderer.oscillateText('buzz', fly.x + FLY_SIZE, fly.y, frame * 2, {amplitude: 10, outline: false });
+      }, {
+        fillStyle: '#fff',
+        textAlign: 'left',
+      });
+      renderer.path(() => {
+        renderer.oscillateText('buzz', fly.x - FLY_SIZE, fly.y, frame * 2, { amplitude: 10, reverse: true, outline: false });
+      }, {
+        fillStyle: '#fff',
+        textAlign: 'right',
+      });
+    }, {
+      lineWidth: 4,
+      strokeStyle: '#fff',
+      fillStyle: fly.trapped ? '#f00' : '#000',
+    });
   }
 }
 

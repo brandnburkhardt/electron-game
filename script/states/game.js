@@ -172,25 +172,8 @@ class Game extends State {
 
         // draw flies
         this.flies.forEach(fly => {
-            renderer.isolatePath(() => {
-                renderer.strokeAndFillCircle(fly.x, fly.y, FLY_SIZE);
-                renderer.path(() => {
-                    renderer.oscillateText('buzz', fly.x + FLY_SIZE, fly.y, this.frame * 2, { amplitude: 10, outline: false });
-                }, {
-                    fillStyle: '#fff',
-                    textAlign: 'left',
-                });
-                renderer.path(() => {
-                    renderer.oscillateText('buzz', fly.x - FLY_SIZE, fly.y, this.frame * 2, { amplitude: 10, reverse: true, outline: false });
-                }, {
-                    fillStyle: '#fff',
-                    textAlign: 'right',
-                });
-            }, {
-                lineWidth: 4,
-                strokeStyle: '#fff',
-                fillStyle: fly.trapped ? '#f00' : '#000',
-            });
+            fly.draw(renderer, fly, this.frame);
+
             renderer.isolatePath(() => {
                renderer.fillText(`Score: ${this.player.score}`, 3, 3); 
             }, {
