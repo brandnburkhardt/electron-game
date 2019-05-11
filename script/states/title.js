@@ -12,7 +12,7 @@ class Title extends State {
 
     draw(renderer) {
         renderer.isolatePath(() => {
-            renderer.strokeAndFillText('Game Title', renderer.center.x, renderer.center.y);
+            renderer.strokeAndFillText('Frog Battle', renderer.center.x, renderer.center.y);
             renderer.isolatePath(() => {
                 renderer.oscillateText('Press Any Key', renderer.center.x, renderer.center.y + 100, this.frame, { drag: 3 });
             }, {
