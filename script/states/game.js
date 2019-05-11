@@ -1,7 +1,7 @@
 const State = require('../state');
 const { STATES } = require('../stateFactory');
 
-const { GAME_HEIGHT, GAME_WIDTH, SPEED } = require('../constants')
+const { SPEED } = require('../constants')
 const Fly = require('../gameObjects/fly');
 const RIBBIT_REST = 60 * 5; // 60 fps * number of seconds
 const RIBBIT_FADE = 300;
