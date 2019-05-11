@@ -1,0 +1,7 @@
+const GAME_CONSTANTS = {
+  GAME_HEIGHT: 900,
+  GAME_WIDTH: 1600,
+  SPEED: 10,
+};
+
+module.exports = GAME_CONSTANTS;

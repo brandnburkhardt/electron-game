@@ -1,12 +1,10 @@
 const State = require('../state');
 const { STATES } = require('../stateFactory');
 
-const SPEED = 10;
+const { GAME_HEIGHT, GAME_WIDTH, SPEED } = require('../constants')
 const RIBBIT_REST = 60 * 5; // 60 fps * number of seconds
 const RIBBIT_FADE = 300;
 const MAX_FLIES = 10;
-const GAME_WIDTH = 1600;
-const GAME_HEIGHT = 900;
 const FLY_SPEED = 5;
 const FLY_SIZE = 12;
 const TONGUE_TIP_SIZE = 6;
