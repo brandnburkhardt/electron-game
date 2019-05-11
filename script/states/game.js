@@ -2,6 +2,7 @@ const State = require('../state');
 const { STATES } = require('../stateFactory');
 
 const { GAME_HEIGHT, GAME_WIDTH, SPEED } = require('../constants')
+const Fly = require('../gameObjects/fly');
 const RIBBIT_REST = 60 * 5; // 60 fps * number of seconds
 const RIBBIT_FADE = 300;
 const MAX_FLIES = 10;
@@ -39,15 +40,7 @@ class Game extends State {
     update(dt, keys) {
 
         if (this.flies.length < MAX_FLIES) {
-            this.flies.push({
-                x: Math.random() * GAME_WIDTH,
-                y: Math.random() * GAME_HEIGHT,
-                target: {
-                    x: Math.random() * GAME_WIDTH,
-                    y: Math.random() * GAME_HEIGHT,
-                },
-                trapped: false,
-            });
+            this.flies.push(new Fly);
         }
 
         this.flies.forEach(fly => {
